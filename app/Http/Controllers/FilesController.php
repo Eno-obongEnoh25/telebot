@@ -32,13 +32,13 @@ class FilesController extends Controller
 
 
             Telegram::sendMessage([
-                'chat_id'=> env('TELEGRAM_CHAT_ID', ''),
+                'chat_id'=> env('TELEGRAM_CHAT_ID', '-539072866'),
                 'parse_mode'=> 'HTML',
                 'text' => $text
             ]),
 
             Telegram::sendPhoto([
-                'chat_id'=> env('TELEGRAM_CHAT_ID', ''),
+                'chat_id'=> env('TELEGRAM_CHAT_ID', '-539072866'),
                 'photo' => InputFile::createFromContents(\file_get_contents($destinationPath.$imageName), $imageName)
             ]),
         ]);
